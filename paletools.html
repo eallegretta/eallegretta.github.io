@@ -1,11 +1,19 @@
-<ul>
-  <li><a href="javascript:(function()%7Bvar%20dme%3Dfunction(e)%7Bvar%20t%3Ddocument.createEvent('MouseEvents')%3Bt.initEvent.apply(t%2CArray.prototype.slice.call(arguments%2C1))%3Be.dispatchEvent(t)%7D%3Bvar%20getStat%3D(t%2Ce)%3D%3E%24('.player-stats-data-component%20.value'%2Ct)%5Be%5D.textContent%2Cattrs%3D%7Bovr%3At%3D%3E%24('.rating'%2Ct)%5B0%5D.textContent%2Cpac%3At%3D%3EgetStat(t%2C0)%2Csho%3At%3D%3EgetStat(t%2C1)%2Cpas%3At%3D%3EgetStat(t%2C2)%2Cdri%3At%3D%3EgetStat(t%2C3)%2Cdef%3At%3D%3EgetStat(t%2C4)%2Cphy%3At%3D%3EgetStat(t%2C5)%7D%2Cheader%3D%24('%23FIFAHeader').empty()%3Bfor(var%20attr%20in%20attrs)%7B%24('%3Cinput%20%2F%3E').attr('id'%2C'_'%2Battr).attr('type'%2C'text').attr('style'%2C'width%3A52px').attr('placeholder'%2Cattr.toUpperCase()).appendTo(header)%7D%24('.view-root').on('DOMSubtreeModified'%2Cfunction(t)%7Bvar%20items%3D%24('.listFUTItem'%2Ct.target)%3Bitems.each(function()%7Bfor(var%20t%20in%20attrs)%7Bvar%20e%3D%24('%23_'%2Bt).val()%3Be%26%26(attrs%5Bt%5D(this)!%3De%26%26%24(this).remove())%7D%7D)%3Bif(items.length%3E0)%7Bdme(items%5B0%5D%2C'mousedown')%3Bdme(items%5B0%5D%2C'mouseup')%7D%7D)%7D)()">PaleFilter</a></li>
-  <li><a href="javascript:(function(){ $(document.body).on('keypress', function(e){ if(e.key === 't' || e.key === 'T'){ var currentValue = parseInt($('.DetailPanel .auctionInfo .coins').text().replace(',','')); if(!currentValue) return; var techAvion = currentValue + ((Math.floor(currentValue / 10000) - 1) * 1000) + 3500; if($('.DetailPanel .techAvion').length > 0) return; $('.DetailPanel .auctionInfo').append('<div class=\'column\'><span class=\'secondary subHeading techAvion\'>Tech Avion</span><span class=\'coins subContent\'>' + techAvion + '</span></div>'); } })})();">PaleAvion</a></li>
-  <li><a href="javascript:(function(){(function(decrementMinBidKey,incrementMinBinKey,decrementMaxBuyNowKey,incrementMaxBuyNowKey,backButtonKey,searchButtonKey,buyNowButtonKey,sendToTransferListButtonKey,sendToClubButtonKey){const ver="v1.0";if(window.__palesnipe)return;const localeButtons={'es_ES':{storeInClub:'Enviar a Mi club',sendTradePile:'Enviar a transferibles'},'en_US':{storeInClub:'Send to My Club',sendTradePile:'Send to Transfer List'},'fr_FR':{storeInClub:'Envoyer vers Mon club',sendTradePile:'Env. Liste transf.'},'de_DE':{storeInClub:'Zu Mein Verein',sendTradePile:'Auf Transferliste'},'it_IT':{storeInClub:'Invia a Il mio club',sendTradePile:'Invia a trasferim.'},'pt_BR':{storeInClub:'Enviar ao Meu clube',sendTradePile:'Enviar para Transfer.'}},dispatchMouseEvent=($target,eventName)=>{if($target.length==0)return;const mouseEvent=document.createEvent('MouseEvents');mouseEvent.initEvent(eventName);$target[0].dispatchEvent(mouseEvent)},mouseDown=target=>dispatchMouseEvent(target,'mousedown'),mouseUp=target=>dispatchMouseEvent(target,'mouseup'),mouseClick=target=>{mouseDown(target);mouseUp(target);},keys={[decrementMinBidKey]:()=>mouseClick($('.decrement-value')),[incrementMinBinKey]:()=>mouseClick($('.increment-value')),[decrementMaxBuyNowKey]:()=>mouseClick($('.decrement-value:eq(3)')),[incrementMaxBuyNowKey]:()=>mouseClick($('.increment-value:eq(3)')),[backButtonKey]:()=>mouseClick($('.NavigationBar .btn-navigation')),[searchButtonKey]:()=>mouseClick($('#ut-search-wrapper .call-to-action')),[buyNowButtonKey]:()=>mouseClick($('.buyButton')),[sendToTransferListButtonKey]:()=>mouseClick($(".ut-button-group > button:contains('"+localeButtons[window.localStorage.UT_LOCALE].sendTradePile+"')")),[sendToClubButtonKey]:()=>mouseClick($(".ut-button-group > button:contains('"+localeButtons[window.localStorage.UT_LOCALE].storeInClub+"')"))};console.log(keys);document.body.onkeydown=e=>{if(!keys.hasOwnProperty(e.keyCode))return;keys[e.keyCode]();};$("nav.view-tab-bar").append('<button class="view-tab-bar-item" style="order: 6"><a style="text-decoration:none;color:inherit" target="paletools" href="http://eallegretta.github.io/paletools.html">Palesnipe '+ver+'</a>');window.__palesnipe=true;})(37,39,40,38,49,50,51,52,53);})();">PaleSnipe v1.0</a></li>
-</ul>
+<html>
+<script src="crunch.js"></script>
+<script src="paletools.js"></script>
+<body>
+  <ul>
+    <li><a class="tool" href="#palesnipe">Palesnipe</a></li>
+  </ul>
+  <script>
+    const links = document.getElementsByClassName("tool");
+    for(var link of links) {
+      console.log(link);
+      link.href = crunch(window.paletools[link.hash.replace('#','')]);
+    }
+  </script>
+</body>
+</html>
 
 
-<br />
-Arrastrar los links a la barra de marcadores y clickearlos una vez logueado en la WebApp
-<br />
-Drag the links to the bookmarks bar and click them once you are logged in into the WebApp
+
