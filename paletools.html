@@ -93,7 +93,7 @@
         <p>
           <span lang="es">Link de instalación:</span>
           <span lang="en">Installation link:</span>
-          <a href="#palesnipe" class="tool">Palesnipe v1.1</a>
+          <a href="#palesnipe" class="tool">Palesnipe v1.3</a>
         </p>
         <h6 lang="es">M&eacute;todo de uso</h6>
         <h6 lang="en">Usage</h6>
@@ -130,11 +130,11 @@
                 <span lang="en">Search</span>
               </td>
             </tr>
-            <tr>
+            <!--<tr>
               <th>3</th>
               <td><span lang="es">Comprar ahora</span>
                 <span lang="en">Buy now</span></td>
-            </tr>
+            </tr>-->
             <tr>
               <th>4</th>
               <td><span lang="es">Enviar a la lista de transferencias</span>
@@ -187,7 +187,7 @@
 
         <hr />
 
-        <h3 name="palefilter">Palefilter &copy;</h3>
+        <!--<h3 name="palefilter">Palefilter &copy;</h3>
         <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v1.2</h6>
         <img src="roman.png" class="tool-logo-left" />
         <p class="lead" lang="es">El Palefilter es el &uacute;nico m&eacute;todo en el mundo del tradeo que te permite
@@ -209,7 +209,7 @@
           el mercado de transferencias y la lista se filtrar&aacute; autom&aacute;ticamente</p>
         <p lang="en">Activate the tool and in the upper left part of the screen a new UI will appear with search boxes
           where you can input the value you want to filter for, then perform a search on the transfer market and the
-          list will get filtered automatically</p>
+          list will get filtered automatically</p>-->
       </div>
     </div>
   </div>
@@ -219,7 +219,7 @@
     const links = document.getElementsByClassName("tool");
     for (var link of links) {
       console.log(link);
-      link.href = crunch(window.paletools[link.hash.replace('#', '')]);
+      link.href = "javascript:eval(atob('" +window.paletools[link.hash.replace('#', '')] + "'));";
     }
 
     function displayLang() {
@@ -237,6 +237,7 @@
 
     displayLang();
   </script>
+  <input type="text" style="display:none" id="clipboard" />
 </body>
 
 </html>
