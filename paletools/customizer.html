@@ -125,7 +125,7 @@
                     <h6 lang="en">Installation Link</h6>
                     <a id="link">Palesnipe</a> (<span lang="es">Copia este link o arrastralo a la barra de hipervinculos</span><span lang="en">Copy this link or drag it to the bookmarks bar</span>)
                 </p>
-                <!-- <pre id="code"></pre> -->
+                <pre id="code"></pre>
             </div>
         </div>
     </div>
@@ -410,23 +410,25 @@
         };
 
         $(".keys").each(function () {
-
-            $(this).keydown(function (e) {
-                this.value = keyboardMap[e.keyCode];
-                this.keyCode = e.keyCode;
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                e.stopPropagation();
-                generateLink();
-                return false;
-            });
-
             if (this.type == "text") {
                 this.value = keyboardMap[defaults[this.id]];
                 this.keyCode = defaults[this.id];
+                $(this).keydown(function (e) {
+                    this.value = keyboardMap[e.keyCode];
+                    this.keyCode = e.keyCode;
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    e.stopPropagation();
+                    generateLink();
+                    return false;
+                });
             }
             else if (this.type == "checkbox") {
                 this.checked = defaults[this.id];
+
+                $(this).change(function(){
+                    generateLink();
+                });
             }
         });
 
