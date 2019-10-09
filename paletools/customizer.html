@@ -1,0 +1,473 @@
+<html>
+<title>Paletools</title>
+<script src="crunch.js"></script>
+<script src="paletools.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    :lang(en) {
+        display: none;
+    }
+
+    .tool-logo-left {
+        float: left;
+        margin-right: 10px;
+    }
+
+    tr th:after {
+        content: ':';
+        margin-right: 4px;
+    }
+
+    hr {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .hide {
+        display:none;
+    }
+
+    input[type="text"] {
+        width: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#es">Español</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#en">English</a>
+                    </li>
+                </ul>
+                <a href="https://github.com/eallegretta/paletools">Github</a>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col">
+                <h1 lang="es">Bienvenido al personalizador de Palesnipe &copy;</h1>
+                <h1 lang="en">Welcome to the Palesnipe &copy; customizer</h1>
+                <h6 lang="es">Presione en la casilla la tecla a utilizar, el link de instalaci&oacute;n cambiar&aacute; autom&aacute;ticamente cada vez que cambies una tecla</h6>
+                <h6 lang="en">Enter on the input box the key to use, the installation link will change automatically every time a key is pressed</h6>
+                <hr />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><span lang="es">Disminuir el valor de puja m&iacute;nima</span><span lang="en">Decrease min bid value</span></td>
+                            <td><input type="text" id="decrementMinBidKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Aumentar el valor de puja m&iacute;nima</span><span lang="en">Increase min bid value</span></td>
+                            <td><input type="text" id="incrementMinBinKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Disminuir el valor del precio m&aacute;ximo de compra</span><span lang="en">Decrease buy now max value</span></td>
+                            <td><input type="text" id="decrementMaxBuyNowKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Aumentar el valor del precio m&aacute;ximo de compra</span><span lang="en">Increase buy now max value</span></td>
+                            <td><input type="text" id="incrementMaxBuyNowKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Disminuir el valor del precio m&iacute;nimo de compra</span><span lang="en">Decrease buy now min value</span></td>
+                            <td><input type="text" id="decrementMinBuyNowKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Aumentar el valor del precio m&iacute;nimo de compra</span><span lang="en">Increase buy now min value</span></td>
+                            <td><input type="text" id="incrementMinBuyNowKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Disminuir el valor de puja m&aacute;ximo</span><span lang="en">Decrease max bid value</span></td>
+                            <td><input type="text" id="decrementMaxBinKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Aumentar el valor de puja m&aacute;ximo</span><span lang="en">Increase max bid value</span></td>
+                            <td><input type="text" id="incrementMaxBinKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Volver a la pantalla anterior</span><span lang="en">Back button</span></td>
+                            <td><input type="text" id="backButtonKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Buscar</span><span lang="en">Search</span></td>
+                            <td><input type="text" id="searchButtonKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Comprar ahora</span><span lang="en">Buy now</span></td>
+                            <td><input type="text" id="buyNowButtonKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Enviar a la lista de transferencias</span><span lang="en">Send to transfer list</span></td>
+                            <td><input type="text" id="sendToTransferListButtonKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Enviar al club</span><span lang="en">Send to club</span></td>
+                            <td><input type="text" id="sendToClubButtonKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Activar / Desactivar Palesnipe</span><span lang="en">Activate / Deactivate Palesnipe</span></td>
+                            <td><input type="text" id="enableDisablePalesnipeKey" class="keys" /></td>
+                        </tr>
+                        <tr>
+                            <td><span lang="es">Presionar ENTER autom&aacute;ticamente despues de comprar</span><span lang="en">Press ENTER automatically after buying</span></td>
+                            <td><input type="checkbox" id="autoPressEnterAfterBuyNow" class="keys" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <p>
+                    <h6 lang="es">Link de instalaci&oacute;n</h6>
+                    <h6 lang="en">Installation Link</h6>
+                    <a id="link">Palesnipe</a> (<span lang="es">Copia este link o arrastralo a la barra de hipervinculos</span><span lang="en">Copy this link or drag it to the bookmarks bar</span>)
+                </p>
+                <pre id="code"></pre>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script>
+        const keyboardMap = [
+            "", // [0]
+            "", // [1]
+            "", // [2]
+            "CANCEL", // [3]
+            "", // [4]
+            "", // [5]
+            "HELP", // [6]
+            "", // [7]
+            "BACK_SPACE", // [8]
+            "TAB", // [9]
+            "", // [10]
+            "", // [11]
+            "CLEAR", // [12]
+            "ENTER", // [13]
+            "ENTER_SPECIAL", // [14]
+            "", // [15]
+            "SHIFT", // [16]
+            "CONTROL", // [17]
+            "ALT", // [18]
+            "PAUSE", // [19]
+            "CAPS_LOCK", // [20]
+            "KANA", // [21]
+            "EISU", // [22]
+            "JUNJA", // [23]
+            "FINAL", // [24]
+            "HANJA", // [25]
+            "", // [26]
+            "ESCAPE", // [27]
+            "CONVERT", // [28]
+            "NONCONVERT", // [29]
+            "ACCEPT", // [30]
+            "MODECHANGE", // [31]
+            "SPACE", // [32]
+            "PAGE_UP", // [33]
+            "PAGE_DOWN", // [34]
+            "END", // [35]
+            "HOME", // [36]
+            "LEFT", // [37]
+            "UP", // [38]
+            "RIGHT", // [39]
+            "DOWN", // [40]
+            "SELECT", // [41]
+            "PRINT", // [42]
+            "EXECUTE", // [43]
+            "PRINTSCREEN", // [44]
+            "INSERT", // [45]
+            "DELETE", // [46]
+            "", // [47]
+            "0", // [48]
+            "1", // [49]
+            "2", // [50]
+            "3", // [51]
+            "4", // [52]
+            "5", // [53]
+            "6", // [54]
+            "7", // [55]
+            "8", // [56]
+            "9", // [57]
+            "COLON", // [58]
+            "SEMICOLON", // [59]
+            "LESS_THAN", // [60]
+            "EQUALS", // [61]
+            "GREATER_THAN", // [62]
+            "QUESTION_MARK", // [63]
+            "AT", // [64]
+            "A", // [65]
+            "B", // [66]
+            "C", // [67]
+            "D", // [68]
+            "E", // [69]
+            "F", // [70]
+            "G", // [71]
+            "H", // [72]
+            "I", // [73]
+            "J", // [74]
+            "K", // [75]
+            "L", // [76]
+            "M", // [77]
+            "N", // [78]
+            "O", // [79]
+            "P", // [80]
+            "Q", // [81]
+            "R", // [82]
+            "S", // [83]
+            "T", // [84]
+            "U", // [85]
+            "V", // [86]
+            "W", // [87]
+            "X", // [88]
+            "Y", // [89]
+            "Z", // [90]
+            "OS_KEY", // [91] Windows Key (Windows) or Command Key (Mac)
+            "", // [92]
+            "CONTEXT_MENU", // [93]
+            "", // [94]
+            "SLEEP", // [95]
+            "NUMPAD0", // [96]
+            "NUMPAD1", // [97]
+            "NUMPAD2", // [98]
+            "NUMPAD3", // [99]
+            "NUMPAD4", // [100]
+            "NUMPAD5", // [101]
+            "NUMPAD6", // [102]
+            "NUMPAD7", // [103]
+            "NUMPAD8", // [104]
+            "NUMPAD9", // [105]
+            "MULTIPLY", // [106]
+            "ADD", // [107]
+            "SEPARATOR", // [108]
+            "SUBTRACT", // [109]
+            "DECIMAL", // [110]
+            "DIVIDE", // [111]
+            "F1", // [112]
+            "F2", // [113]
+            "F3", // [114]
+            "F4", // [115]
+            "F5", // [116]
+            "F6", // [117]
+            "F7", // [118]
+            "F8", // [119]
+            "F9", // [120]
+            "F10", // [121]
+            "F11", // [122]
+            "F12", // [123]
+            "F13", // [124]
+            "F14", // [125]
+            "F15", // [126]
+            "F16", // [127]
+            "F17", // [128]
+            "F18", // [129]
+            "F19", // [130]
+            "F20", // [131]
+            "F21", // [132]
+            "F22", // [133]
+            "F23", // [134]
+            "F24", // [135]
+            "", // [136]
+            "", // [137]
+            "", // [138]
+            "", // [139]
+            "", // [140]
+            "", // [141]
+            "", // [142]
+            "", // [143]
+            "NUM_LOCK", // [144]
+            "SCROLL_LOCK", // [145]
+            "WIN_OEM_FJ_JISHO", // [146]
+            "WIN_OEM_FJ_MASSHOU", // [147]
+            "WIN_OEM_FJ_TOUROKU", // [148]
+            "WIN_OEM_FJ_LOYA", // [149]
+            "WIN_OEM_FJ_ROYA", // [150]
+            "", // [151]
+            "", // [152]
+            "", // [153]
+            "", // [154]
+            "", // [155]
+            "", // [156]
+            "", // [157]
+            "", // [158]
+            "", // [159]
+            "CIRCUMFLEX", // [160]
+            "EXCLAMATION", // [161]
+            "DOUBLE_QUOTE", // [162]
+            "HASH", // [163]
+            "DOLLAR", // [164]
+            "PERCENT", // [165]
+            "AMPERSAND", // [166]
+            "UNDERSCORE", // [167]
+            "OPEN_PAREN", // [168]
+            "CLOSE_PAREN", // [169]
+            "ASTERISK", // [170]
+            "PLUS", // [171]
+            "PIPE", // [172]
+            "HYPHEN_MINUS", // [173]
+            "OPEN_CURLY_BRACKET", // [174]
+            "CLOSE_CURLY_BRACKET", // [175]
+            "TILDE", // [176]
+            "", // [177]
+            "", // [178]
+            "", // [179]
+            "", // [180]
+            "VOLUME_MUTE", // [181]
+            "VOLUME_DOWN", // [182]
+            "VOLUME_UP", // [183]
+            "", // [184]
+            "", // [185]
+            "SEMICOLON", // [186]
+            "EQUALS", // [187]
+            "COMMA", // [188]
+            "MINUS", // [189]
+            "PERIOD", // [190]
+            "SLASH", // [191]
+            "BACK_QUOTE", // [192]
+            "", // [193]
+            "", // [194]
+            "", // [195]
+            "", // [196]
+            "", // [197]
+            "", // [198]
+            "", // [199]
+            "", // [200]
+            "", // [201]
+            "", // [202]
+            "", // [203]
+            "", // [204]
+            "", // [205]
+            "", // [206]
+            "", // [207]
+            "", // [208]
+            "", // [209]
+            "", // [210]
+            "", // [211]
+            "", // [212]
+            "", // [213]
+            "", // [214]
+            "", // [215]
+            "", // [216]
+            "", // [217]
+            "", // [218]
+            "OPEN_BRACKET", // [219]
+            "BACK_SLASH", // [220]
+            "CLOSE_BRACKET", // [221]
+            "QUOTE", // [222]
+            "", // [223]
+            "META", // [224]
+            "ALTGR", // [225]
+            "", // [226]
+            "WIN_ICO_HELP", // [227]
+            "WIN_ICO_00", // [228]
+            "", // [229]
+            "WIN_ICO_CLEAR", // [230]
+            "", // [231]
+            "", // [232]
+            "WIN_OEM_RESET", // [233]
+            "WIN_OEM_JUMP", // [234]
+            "WIN_OEM_PA1", // [235]
+            "WIN_OEM_PA2", // [236]
+            "WIN_OEM_PA3", // [237]
+            "WIN_OEM_WSCTRL", // [238]
+            "WIN_OEM_CUSEL", // [239]
+            "WIN_OEM_ATTN", // [240]
+            "WIN_OEM_FINISH", // [241]
+            "WIN_OEM_COPY", // [242]
+            "WIN_OEM_AUTO", // [243]
+            "WIN_OEM_ENLW", // [244]
+            "WIN_OEM_BACKTAB", // [245]
+            "ATTN", // [246]
+            "CRSEL", // [247]
+            "EXSEL", // [248]
+            "EREOF", // [249]
+            "PLAY", // [250]
+            "ZOOM", // [251]
+            "", // [252]
+            "PA1", // [253]
+            "WIN_OEM_CLEAR", // [254]
+            "" // [255]
+        ];
+
+        let defaults = {
+            decrementMinBidKey: 37,
+            incrementMinBinKey: 39,
+            decrementMaxBinKey: 98,
+            incrementMaxBinKey: 104,
+            decrementMinBuyNowKey: 100,
+            incrementMinBuyNowKey: 102,
+            decrementMaxBuyNowKey: 40,
+            incrementMaxBuyNowKey: 38,
+            backButtonKey: 49,
+            searchButtonKey: 50,
+            buyNowButtonKey: 51,
+            sendToTransferListButtonKey: 52,
+            sendToClubButtonKey: 53,
+            autoPressEnterAfterBuyNow: true,
+            enableDisablePalesnipeKey: 9
+        };
+
+        $(".keys").each(function () {
+
+            $(this).keydown(function (e) {
+                this.value = keyboardMap[e.keyCode];
+                this.keyCode = e.keyCode;
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                generateLink();
+                return false;
+            });
+
+            if (this.type == "text") {
+                this.value = keyboardMap[defaults[this.id]];
+                this.keyCode = defaults[this.id];
+            }
+            else if (this.type == "checkbox") {
+                this.checked = defaults[this.id];
+            }
+        });
+
+        function generateLink(){
+            $(".keys").each(function(){
+                if(this.type == "text"){
+                    defaults[this.id] = this.keyCode;
+                }
+                else if(this.type == "checkbox") {
+                    defaults[this.id] = this.checked;
+                }
+            });
+
+            var code = btoa("window.palesnipe = " + JSON.stringify(defaults) + ";");
+
+            var href = "eval(atob('" + code + "'));";
+            href += "eval(atob('" +window.paletools.palesnipe + "'));";
+
+            $("#link")[0].href = "javascript:" + href;
+
+            $("#code").text(atob(code) + '\n\r' + atob(window.paletools.palesnipe));
+        }
+
+
+        function displayLang() {
+            var css = window.document.styleSheets[0];
+            if (!location.hash || location.hash == '#es') {
+                $('[lang="es"]').show();
+                $('[lang="en"]').hide();
+            } else if (location.hash == '#en') {
+                $('[lang="en"]').show();
+                $('[lang="es"]').hide();
+            }
+        }
+
+        window.onhashchange = displayLang;
+
+        generateLink();
+        displayLang();
+    </script>
+    <input type="text" style="display:none" id="clipboard" />
+</body>
+
+</html>
