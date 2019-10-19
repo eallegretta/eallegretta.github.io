@@ -257,82 +257,88 @@ const keyboardMap = [
     "" // [255]
 ];
 
-let defaults = {
-    back: 49,
-    enableDisable: 188,
-    tech: 84,
-    lists: {
-        up: 38,
-        down: 40,
-        prev: 37,
-        next: 39,
-    },
-    search: {
-        decMinBid: 37,
-        incMinBid: 39,
-        decMaxBid: 35,
-        incMaxBid: 36,
-        decMinBuy: 46,
-        incMinBuy: 34,
-        decMaxBuy: 40,
-        incMaxBuy: 38,
-        search: 50
-    },
-    results: {
-        bid: 52,
-        buy: 51,
-        transfer: 82,
-        club: 67,
-        pressEnter: true,
-        autoBuy: false,
-        sell: 81,
-        decBid: 46,
-        incBid: 34
-    }
-};
+function configureScript(codeId, linkId, keysContainer) {
 
-$(".keys").each(function () {
-    if (this.type == "text") {
-        this.value = keyboardMap[get(this.dataset.key, defaults)];
-        this.keyCode = get(this.dataset.key, defaults);
-        $(this).keydown(function (e) {
-            this.value = keyboardMap[e.keyCode];
-            this.keyCode = e.keyCode;
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            e.stopPropagation();
-            generateLink();
-            return false;
-        });
-    }
-    else if (this.type == "checkbox") {
-        this.checked = get(this.dataset.key, defaults);
-
-        $(this).change(function(){
-            generateLink();
-        });
-    }
-});
-
-function generateLink(){
-    $(".keys").each(function(){
-        if(this.type == "text"){
-            set(this.dataset.key, defaults, this.keyCode);
+    let defaults = {
+        back: 49,
+        enableDisable: 188,
+        tech: 84,
+        lists: {
+            up: 38,
+            down: 40,
+            prev: 37,
+            next: 39,
+        },
+        search: {
+            decMinBid: 37,
+            incMinBid: 39,
+            decMaxBid: 35,
+            incMaxBid: 36,
+            decMinBuy: 46,
+            incMinBuy: 34,
+            decMaxBuy: 40,
+            incMaxBuy: 38,
+            search: 50
+        },
+        results: {
+            bid: 52,
+            buy: 51,
+            transfer: 82,
+            club: 67,
+            pressEnter: true,
+            autoBuy: false,
+            preventBack: true,
+            sell: 81,
+            decBid: 46,
+            incBid: 34
         }
-        else if(this.type == "checkbox") {
-            set(this.dataset.key, defaults, this.checked);
+    };
+
+    $(".keys", keysContainer).each(function () {
+        if (this.type == "text") {
+            this.value = keyboardMap[get(this.dataset.key, defaults)];
+            this.keyCode = get(this.dataset.key, defaults);
+            $(this).keydown(function (e) {
+                this.value = keyboardMap[e.keyCode];
+                this.keyCode = e.keyCode;
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                generateLink();
+                return false;
+            });
+        }
+        else if (this.type == "checkbox") {
+            this.checked = get(this.dataset.key, defaults);
+
+            $(this).change(function () {
+                generateLink();
+            });
         }
     });
 
-    let code = atob(window.paletools['paletools-min']);
-    code = `${code.substring(0, code.length - 3)}(${JSON.stringify(defaults)});`;
-    code = btoa(code);
-    var href = "eval(atob('" + code + "'));";
-    $("#paletools")[0].href = "javascript:" + href;
-    console.log(atob(code));
+    function generateLink() {
+        $(".keys", keysContainer).each(function () {
+            if (this.type == "text") {
+                set(this.dataset.key, defaults, this.keyCode);
+            }
+            else if (this.type == "checkbox") {
+                set(this.dataset.key, defaults, this.checked);
+            }
+        });
+
+        let code = atob(window.paletools[codeId]);
+        code = `${code.substring(0, code.length - 3)}(${JSON.stringify(defaults)});`;
+        code = btoa(code);
+        var href = "eval(atob('" + code + "'));";
+        $(linkId)[0].href = "javascript:" + href;
+        console.log(atob(code));
+    }
+
+    generateLink();
 }
 
-function get(path, obj=self, separator='.') {
+function get(path, obj = self, separator = '.') {
     var properties = Array.isArray(path) ? path : path.split(separator)
     return properties.reduce((prev, curr) => prev && prev[curr], obj)
 }
@@ -340,7 +346,7 @@ function get(path, obj=self, separator='.') {
 function set(path, target, value) {
     var parts = path.split('.');
     let index = 0;
-    for(; index < parts.length - 1; index++){
+    for (; index < parts.length - 1; index++) {
         target = target[parts[index]];
     }
 
@@ -360,5 +366,5 @@ function displayLang() {
 
 window.onhashchange = displayLang;
 
-generateLink();
+
 displayLang();
