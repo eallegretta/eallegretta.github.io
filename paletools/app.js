@@ -294,45 +294,47 @@ function configureScript(codeId, linkId, keysContainer) {
         }
     };
 
-    $(".keys", keysContainer).each(function () {
-        if (this.type == "text") {
-            this.value = keyboardMap[get(this.dataset.key, defaults)];
-            this.keyCode = get(this.dataset.key, defaults);
-            $(this).keydown(function (e) {
-                this.value = keyboardMap[e.keyCode];
-                this.keyCode = e.keyCode;
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                e.stopPropagation();
-                generateLink();
-                return false;
-            });
-        }
-        else if (this.type == "checkbox") {
-            this.checked = get(this.dataset.key, defaults);
-
-            $(this).change(function () {
-                generateLink();
-            });
-        }
-    });
-
-    function generateLink() {
+    if (keysContainer) {
         $(".keys", keysContainer).each(function () {
             if (this.type == "text") {
-                set(this.dataset.key, defaults, this.keyCode);
+                this.value = keyboardMap[get(this.dataset.key, defaults)];
+                this.keyCode = get(this.dataset.key, defaults);
+                $(this).keydown(function (e) {
+                    this.value = keyboardMap[e.keyCode];
+                    this.keyCode = e.keyCode;
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    e.stopPropagation();
+                    generateLink();
+                    return false;
+                });
             }
             else if (this.type == "checkbox") {
-                set(this.dataset.key, defaults, this.checked);
+                this.checked = get(this.dataset.key, defaults);
+
+                $(this).change(function () {
+                    generateLink();
+                });
             }
         });
+    }
 
+    function generateLink() {
         let code = atob(window.paletools[codeId]);
-        code = `${code.substring(0, code.length - 3)}(${JSON.stringify(defaults)});`;
+        if (keysContainer) {
+            $(".keys", keysContainer).each(function () {
+                if (this.type == "text") {
+                    set(this.dataset.key, defaults, this.keyCode);
+                }
+                else if (this.type == "checkbox") {
+                    set(this.dataset.key, defaults, this.checked);
+                }
+            });
+            code = `${code.substring(0, code.length - 3)}(${JSON.stringify(defaults)});`;
+        }
         code = btoa(code);
         var href = "eval(atob('" + code + "'));";
         $(linkId)[0].href = "javascript:" + href;
-        console.log(atob(code));
     }
 
     generateLink();
