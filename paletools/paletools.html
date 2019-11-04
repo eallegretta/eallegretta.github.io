@@ -29,6 +29,10 @@ body{
     margin-top: 40px;
     margin-bottom: 40px;
   }
+  
+  .ver {
+	display: inline;
+  }
 </style>
 
 <body>
@@ -86,9 +90,9 @@ body{
               <li>Presionar el boton DERECHO del mouse sobre el link de instalaci&oacute;n</li>
               <li>Tocar en "Copiar direcci&oacute;n de enlace"</li>
               <li>Presionar el boton DERECHO en la barra de marcadores</li>
-              <li>Tocar en "Añadir p&acute;gina"</li>
+              <li>Tocar en "A&ntilde;adir p&aacute;gina"</li>
               <li>Aparecer&aacute; un dialogo donde hay que ingresar el Nombre y la URL</li>
-              <li>Donde dice Nombre, escribir Paletools</li>
+              <li>Donde dice Nombre, escribir Paletools <div class="ver"></div></li>
               <li>Donde dice URL en el campo de texto presiomos el boton DERECHO del mouse y tocamos en "Pegar"</li>
               <li>Presionamos en GUARDAR</li>
             </ol>
@@ -111,7 +115,7 @@ body{
               <li lang="en">RIGHT click on the bookmarks bar</li>
               <li lang="en">Click on "Add site"</li>
               <li lang="en">A dialog should appear where you can enter the Name and the URL</li>
-              <li lang="en">Where it says Name, input Paletools v2.0</li>
+              <li lang="en">Where it says Name, input Paletools <div class="ver"></div></li>
               <li lang="en">Where it says URL on the input box RIGHT click and then click on "Paste"</li>
               <li lang="en">Click on SAVE</li>
             </ol>
@@ -122,7 +126,7 @@ body{
         <hr />
 
         <h3 name="palesnipe">Paletools &copy;</h3>
-        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v2.0.6</h6>
+        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: <div class="ver"></div></h6>
         <img src="paletools-logo.jpg" class="tool-logo-left" />
         <p class="lead" lang="es">
             Utiliza la siguiente tabla para configurar tus botones o dejarlos por defecto, presiona el mouse sobre el campo de texto y presiona la tecla que quieres usar, el link de instalaci&oacute;n se actualizar&aacute; autom&aacute;ticamente
@@ -250,7 +254,7 @@ body{
           </table>
           <h3 lang="es">Link de instalaci&oacute;n</h3>
           <h3 lang="en">Installation Link</h3>
-          <a href="#" id="paletools">Paletools v2.0.6</a>
+          <a href="#" id="paletools">Paletools <div class="ver"></div></a>
           <hr />
           <div lang="es">
             <h3>Video Tutorial</h3>
@@ -263,7 +267,8 @@ body{
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <script src="paletools-min.js?v2.0.6"></script>
+<script>$(".ver").text('v2.0.7')</script>
+  <script src="paletools-min.js?v2.0.7"></script>
   <script src="app.js"></script>
   <script>
   configureScript('paletools-min', '#paletools', '#paletools-keys');
