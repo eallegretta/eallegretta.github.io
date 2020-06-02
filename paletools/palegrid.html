@@ -1,10 +1,142 @@
 <html>
+<head>
+<title>Paletools</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+body{
+  background-color:#f8f9fa!important
+}
+
+.container {
+  background-color: white;
+}
+  :lang(en) {
+    display: none;
+  }
+
+  .tool-logo-left {
+    float: left;
+    margin-right: 10px;
+    width: 300px;
+  }
+
+  tr th:after {
+    content: ':';
+    margin-right: 4px;
+  }
+
+  hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+</style>
+</head>
 <body>
-<h3>Instalaci&oacute;n igual que Paletools y Palesnipe</h3>
-<ul>
-  <li><b><a href="javascript:(function()%7Blet%20s%20%3D%20document.getElementById('%23palegrid')%20%7C%7C%20document.createElement('style')%3B%0Adocument.body.appendChild(s)%3B%0As.innerText%20%3D%20'.listFUTItem%7Bdisplay%3Ainline-flex%3Bwidth%3A24.75%25%7D.ui-layout-left%20.listFUTItem.has-auction-data%20.entityContainer%7Bwidth%3Aauto%7D.listFUTItem%20.entityContainer%7Bfloat%3Anone%3Bpadding%3A0%3Bdisplay%3Ablock%7D.listFUTItem%20.auction%7Bfloat%3Anone%3Bwidth%3A43%25%3Bposition%3Aabsolute%3Bleft%3A50%25%3Bdisplay%3Ablock%3Btop%3A35px%3Bmargin%3A0%7D.player-stats-data-component%7Bdisplay%3Anone%7D.listFUTItem%20.entityContainer%20.name%7Bpadding%3A0!important%7D.ui-layout-left%20.listFUTItem%20.auction%20.auctionValue%7Bfloat%3Aleft%3Bwidth%3A100%25%7D.listFUTItem%20.auction%20.label%7Bdisplay%3Ainline-block%3Bwidth%3A26px%3Boverflow%3Ahidden%3Bwhite-space%3Anowrap%3Bfont-size%3A.75rem%3Btext-align%3Aleft%7D.listFUTItem%20.auction%20.value%7Bdisplay%3Ainline-block%3Bfont-size%3A14px%3Bfloat%3Aright%7D.listFUTItem%20.auction%20.time%7Bfont-size%3A14px%3Bfloat%3Aright%7D.listFUTItem%20.auction%20.auction-state%7Bfloat%3Aright!important%3Bwidth%3A100%25!important%7D.listFUTItem%20.rowContent.has-tap-callback%3A%3Abefore%2C.listFUTItem.rowContent.has-tap-callback%3A%3Abefore%7Bdisplay%3Anone%7D.currency-coins%3A%3Aafter%7Bdisplay%3Anone%7D.listFUTItem.has-auction-data%20.entityContainer%20.dataString%7Bposition%3Aabsolute%3Btop%3A15px%3Bleft%3A35px%7D.listFUTItem.chemistryStyle%20.styleView%7Bdisplay%3Anone%7D.listFUTItem%20.rowContent%7Bborder-top%3A0!important%7D.listFUTItem%20.entityContainer%20.name%7Bfont-size%3A1rem%7D.ut-club-search-results-view%20.player-stats-data-component%7Bdisplay%3Ablock%7D.ut-club-search-results-view%20.player-stats-data-component%20ul%20li%3Afirst-child%7Bpadding-left%3A4px!important%7Dsection.ui-layout-right%20.listFUTItem%7Bheight%3A110px%3Bwidth%3A24.5%25%3Bborder-right-width%3A1px%3Bdisplay%3Ainline-block%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%7Bheight%3A100%25%3Bwidth%3A100%25%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.item%7Bwidth%3A90px%3Bheight%3A106px%7Dsection.ui-layout-right%20.listFUTItem%20.btnAction.add%7Bdisplay%3Anone%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.name%7Bdisplay%3Anone%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.consumable%2B.name%7Bdisplay%3Ablock%3Bfont-size%3A10px%3Bmax-width%3A100%25%3Bposition%3Aabsolute%3Btop%3A95px%3Bwidth%3A100%25%3Btext-align%3Acenter%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.consumable%2B.name%2B.dataString%7Bdisplay%3Ablock%3Bfont-size%3A10px%3Bmax-width%3A100%25%3Bposition%3Aabsolute%3Btop%3A12px%3Bwidth%3A100%25%3Bmax-width%3A100%25%3Btext-align%3Acenter%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.name.untradeable%7Bcolor%3Ared%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.name.untradeable%3A%3Abefore%7Bdisplay%3Anone%7Dsection.ui-layout-right%20.listFUTItem%20.entityContainer%20.player-stats-data-component%7Bdisplay%3Anone%7D.ut-transfer-list-view%20.sectioned-item-list%3Anth-child(3)%20.listFUTItem%7Bdisplay%3Ainline-block%3Bwidth%3A90px%7D.listFUTItem%20.entityContainer%20.name%7Bfont-size%3A14px%7D'%3B%7D)()%3B">Palegrid v1.1</a></b></li>
-  <li><i>Legacy versions</i></li>
-  <li><s><a href='javascript:(function(){let s = document.createElement("style");s.innerText = ".listFUTItem{display:inline-flex;width:24.75%}.ui-layout-left .listFUTItem.has-auction-data .entityContainer{width:auto}.listFUTItem .entityContainer{float:none;padding:0;display:block}.listFUTItem .auction{float:none;width:43%;position:absolute;left:50%;display:block;top:35px;margin:0}.player-stats-data-component{display:none}.listFUTItem .entityContainer .name{padding:0!important}.ui-layout-left .listFUTItem .auction .auctionValue{float:left;width:100%}.listFUTItem .auction .label{display:inline-block;width:26px;overflow:hidden;white-space:nowrap;font-size:.75rem;text-align:left}.listFUTItem .auction .value{display:inline-block;font-size:14px;float:right}.listFUTItem .auction .time{font-size:14px;float:right}.listFUTItem .auction .auction-state{float:right!important;width:100%!important}.listFUTItem .rowContent.has-tap-callback::before,.listFUTItem.rowContent.has-tap-callback::before{display:none}.currency-coins::after{display:none}.listFUTItem.has-auction-data .entityContainer .dataString{position:absolute;top:15px;left:35px}.listFUTItem.chemistryStyle .styleView{display:none}.listFUTItem .rowContent{border-top:0!important}.listFUTItem .entityContainer .name{font-size:1rem}.ut-club-search-results-view .player-stats-data-component{display:block}.ut-club-search-results-view .player-stats-data-component ul li:first-child{padding-left:4px!important}section.ui-layout-right .ut-club-search-results-view .listFUTItem{height:110px;width:24.5%;border-right-width:1px;display:inline-block}section.ui-layout-right .ut-club-search-results-view .listFUTItem .entityContainer{height:100%;width:100%}section.ui-layout-right .ut-club-search-results-view .listFUTItem .entityContainer .item{width:90px;height:106px}section.ui-layout-right .ut-club-search-results-view .listFUTItem .btnAction.add{display:none}section.ui-layout-right .ut-club-search-results-view .listFUTItem .entityContainer .name{display:none}section.ui-layout-right .ut-club-search-results-view .listFUTItem .entityContainer .name{display:none}section.ui-layout-right .ut-club-search-results-view .listFUTItem .entityContainer .player-stats-data-component{display:none}.ut-transfer-list-view .sectioned-item-list:nth-child(3) .listFUTItem{display:inline-block;width:90px}.listFUTItem .entityContainer .name{font-size:14px}";document.body.appendChild(s)})()'>PaleGrid v1.0</a></s></li>
-</ul>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#es">Español</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#en">English</a>
+          </li>
+        </ul>
+        <a href="https://github.com/eallegretta/paletools">Github</a>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col">
+        <h1 lang="es">Bienvenido a Palegrid &copy;</h1>
+        <h1 lang="en">Welcome to Palegrid &copy;</h1>
+        <p class="lead" lang="es">
+          Palegird &copy; es una herramienta para mostrar los jugadores, managers y consumibles de la WebApp en forma de grilla ocupando menos espacio en pantalla.
+        </p>
+        <p class="lead" lang="en">
+          Palegrid &copy; is a tool for displaying players, managers and consumables on the WebApp in a grid format occupying less real state.
+        </p>
+
+        <h3 lang="es">Como instalar Palegrid</h3>
+        <h3 lang="en">How to install Palegrid</h3>
+        <p class="lead" lang="es">
+          Palegrid es un bookmarklet, un marcador que en lugar de apuntar y dirigirte a un sitio web, ejecuta
+          codigo javascript en el cliente que va a modificar a la WebApp de Ultimate Team, para ejecutarlo lo que hay
+          que hacer
+          es cualquiera de los siguientes dos m&eacute;todos:
+        </p>
+        <p class="lead" lang="en">
+          Palegrid is a bookmarklet, a bookmark that instead of redirecting you to a web site, it executes
+          javascript code in the client side that will modify the Ultimate Team WebApp, in order to install it you have
+          to do the following:
+        </p>
+        <ol lang="es">
+          <li><b>PASO 1:</b>Asegurarse que la barra de marcadores del navegador este visible, en caso de que no lo este
+            hacer lo siguiente
+            <ol>
+              <li>Ir a las opciones del navagedor > Barra de Marcadores > Mostrar Barra de Marcadores (CTRL + SHIFT + B
+                en Chrome)</li>
+            </ol>
+          </li>
+          <li><b>PASO 2:</b>Arrastrar el link de instalación a la barra de marcadores</li>
+          <li><b>PASO 2b:</b>En caso que arrastrar el link no funcione realizar lo siguiente:
+            <ol>
+              <li>Presionar el boton DERECHO del mouse sobre el link de instalaci&oacute;n</li>
+              <li>Tocar en "Copiar direcci&oacute;n de enlace"</li>
+              <li>Presionar el boton DERECHO en la barra de marcadores</li>
+              <li>Tocar en "Añadir p&acute;gina"</li>
+              <li>Aparecer&aacute; un dialogo donde hay que ingresar el Nombre y la URL</li>
+              <li>Donde dice Nombre, escribir Paletools</li>
+              <li>Donde dice URL en el campo de texto presiomos el boton DERECHO del mouse y tocamos en "Pegar"</li>
+              <li>Presionamos en GUARDAR</li>
+            </ol>
+          </li>
+          <li><b>PASO 3:</b>Abrir la WebApp y clickear en el link que acabamos de agregar a la barra de marcadores</li>
+        </ol>
+
+        <ol lang="en">
+          <li lang="en"><b lang="en">STEP 1:</b>Make sure the browser's bookmarks bar is visible, if its not then do the following
+            <ol lang="en">
+              <li lang="en">Click on the browser settings button > Bookmarks > Ir a las opciones del navagedor > Barra de
+                Marcadores > Show Bookmarks Bar (CTRL + SHIFT + B on Chrome)</li>
+            </ol>
+          </li>
+          <li lang="en"><b lang="en">STEP 2:</b>Drag the installation link to the Bookmarks Bar</li>
+          <li lang="en"><b lang="en">STEP 2b:</b>In the event dragging the link does not work the follow the next steps:
+            <ol lang="en">
+              <li lang="en">RIGHT click over the installation link</li>
+              <li lang="en">Click on "Copy link address"</li>
+              <li lang="en">RIGHT click on the bookmarks bar</li>
+              <li lang="en">Click on "Add site"</li>
+              <li lang="en">A dialog should appear where you can enter the Name and the URL</li>
+              <li lang="en">Where it says Name, input Paletools v2.0</li>
+              <li lang="en">Where it says URL on the input box RIGHT click and then click on "Paste"</li>
+              <li lang="en">Click on SAVE</li>
+            </ol>
+          </li>
+          <li lang="en"><b lang="en">STEP 3:</b>Open the WebApp and click on the link we have just added to the bookmarks bar</li>
+        </ol>
+
+        <hr />
+
+        <h3 name="palesnipe">Palesgrid &copy;</h3>
+        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v1.2</h6>
+          <h3 lang="es">Link de instalaci&oacute;n</h3>
+          <h3 lang="en">Installation Link</h3>
+          <a href="#" id="palegrid">Palegrid v1.2</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="palegrid.js?v1.2"></script>
+  <script src="app.js?3242"></script>
+  <script>
+  configureScript('palegrid', '#palegrid');
+  </script>
+  <input type="text" style="display:none" id="clipboard" />
 </body>
+
 </html>
