@@ -1,0 +1,8 @@
+.ds4 .stick, .ds4.white .stick {
+	background-image: url(https://eallegretta.github.io/gamepadviewer/sticks.svg) !important;
+}
+
+.controller.ds4, .controller.ds4.white {
+	background-image: url(https://eallegretta.github.io/gamepadviewer/control.svg) !important;
+}
+
