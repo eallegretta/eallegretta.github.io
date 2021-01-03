@@ -1,0 +1,2 @@
+window.paletools = window.paletools || {};
+window.paletools['palelimbo-min'] = "ZmV0Y2goImh0dHBzOi8vdXRhcy5leHRlcm5hbC5zMi5mdXQuZWEuY29tL3V0L2dhbWUvZmlmYTIxL3VzZXJtYXNzaW5mbyIse2hlYWRlcnM6eyJYLVVULVNJRCI6c2VydmljZXMuQXV0aGVudGljYXRpb24uZ2V0VXRhc1Nlc3Npb24oKS5pZH19KS50aGVuKGU9PmUuanNvbigpKS50aGVuKGU9PmFsZXJ0KGUudXNlckluZm8udW5hc3NpZ25lZFBpbGVTaXplKSk7"
