@@ -1,0 +1,2 @@
+window.paletools = window.paletools || {};
+window.paletools['paletech-undefined'] = "KGZ1bmN0aW9uKCl7DQogICAgbGV0IGJvdWdodEZvciA9IHBhcnNlSW50KHByb21wdCgnUHJlY2lvIGRlIGNvbXByYScpKTsNCiAgICBsZXQgdGVjaCA9IHBhcnNlSW50KGJvdWdodEZvciArICgoTWF0aC5mbG9vcihib3VnaHRGb3IgLyAxMDAwMCkgLSAxKSAqIDEwMDApICsgMzUwMCk7DQoNCiAgICBhbGVydCh0ZWNoKTsNCn0pKCk7"
