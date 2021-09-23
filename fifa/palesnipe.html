@@ -17,36 +17,9 @@
   })(window,document,'script','dataLayer','GTM-MJSKH8N');</script>
   <!-- End Google Tag Manager -->
 <title>Palesnipe</title>
+<link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style>
-body{
-  background-color:#f8f9fa!important
-}
-
-.container {
-  background-color: white;
-}
-  :lang(en) {
-    display: none;
-  }
-
-  .tool-logo-left {
-    float: left;
-    margin-right: 10px;
-    width: 300px;
-  }
-
-  tr th:after {
-    content: ':';
-    margin-right: 4px;
-  }
-
-  hr {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-</style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-200440638-1">
 </script>
@@ -64,7 +37,7 @@ body{
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -152,7 +125,7 @@ body{
         <hr />
 
         <h3 name="palesnipe">Palesnipe &copy;</h3>
-        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v1.9.2</h6>
+        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v2.0.0</h6>
         <p class="lead" lang="es">
           Utiliza la siguiente tabla para configurar tus botones o dejarlos por defecto, presiona el mouse sobre el campo de texto y presiona la tecla que quieres usar, el link de instalaci&oacute;n se actualizar&aacute; autom&aacute;ticamente
         </p>
@@ -212,6 +185,10 @@ body{
               <tr>
                 <td><span lang="es">Comprar ahora</span><span lang="en">Buy now</span></td>
                 <td><input type="text" data-key="results.buy" class="keys" /></td>
+              </tr>
+              <tr>
+                <td><span lang="es">Resetear puja</span><span lang="en">Reset Bid</span></td>
+                <td><input type="text" data-key="search.resetBid" class="keys" /></td>
               </tr>
               <tr>
                 <td><span lang="es">Pujar</span><span lang="en">Bid</span></td>
@@ -274,7 +251,11 @@ body{
           </table>
           <h3 lang="es">Link de instalaci&oacute;n</h3>
           <h3 lang="en">Installation Link</h3>
-          <a href="#" id="palesnipe">Palesnipe v1.9.2</a>
+          <a href="#" id="palesnipe">Palesnipe v2.0.0</a>
+          <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
+          <h3 lang="en">Donate with MercadoPago or Paypal</h3>
+          <a href="https://ceneka.net/mp/d/paletaeaa" target="_blank"><img src="mercadopago.png" style="width:100px;display: inline-block" /></a>
+          <a href="https://streamlabs.com/paleta_ar/tip" target="_blank"><img src="paypal.png" style="width:100px;display: inline-block" /></a>
           <hr />
           <div lang="es">
             <h3>Video Tutorial</h3>
@@ -287,10 +268,10 @@ body{
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    <script src="dist/palesnipe-v1.9.2.js?v1.9.1"></script>
+    <script src="dist/palesnipe-v2.0.0.js?v2.0.0"></script>
   <script src="app.js?3242"></script>
   <script>
-  configureScript('palesnipe-1.9.2', '#palesnipe', '#palesnipe-keys');
+  configureScript('palesnipe-2.0.0', '#palesnipe', '#palesnipe-keys');
   </script>
   <input type="text" style="display:none" id="clipboard" />
 </body>

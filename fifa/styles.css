@@ -1,0 +1,43 @@
+body {
+    color: #efefef !important;
+    background-color: #333333 !important;
+}
+
+pre {
+    color: #efefef !important;
+}
+
+.navbar-light {
+    background-color: transparent !important;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.jumbotron {
+    background-color: transparent !important;
+}
+    :lang(en) {
+      display: none;
+    }
+  
+    .tool-logo-left {
+      float: left;
+      margin-right: 10px;
+      width: 300px;
+    }
+  
+    tr th:after {
+      content: ':';
+      margin-right: 4px;
+    }
+  
+    hr {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .ver {
+      display: inline;
+    }
