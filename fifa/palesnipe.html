@@ -53,8 +53,8 @@
 
     <div class="row">
       <div class="col">
-        <h1 lang="es">Bienvenido a Palesnipe (Stealth) &copy;</h1>
-        <h1 lang="en">Welcome to Palesnipe (Stealth) &copy;</h1>
+        <h1 lang="es">Bienvenido a Palesnipe &copy;</h1>
+        <h1 lang="en">Welcome to Palesnipe &copy;</h1>
         <p class="lead" lang="es">
           Palesnipe &copy; es una herramienta para realizar snipes en la WebApp utilizando solo el teclado.
         </p>
@@ -91,7 +91,7 @@
               <li>Presionar el boton DERECHO en la barra de marcadores</li>
               <li>Tocar en "Añadir p&acute;gina"</li>
               <li>Aparecer&aacute; un dialogo donde hay que ingresar el Nombre y la URL</li>
-              <li>Donde dice Nombre, escribir Paletools</li>
+              <li>Donde dice Nombre, escribir Palesnipe v<span class="version"></span></li>
               <li>Donde dice URL en el campo de texto presiomos el boton DERECHO del mouse y tocamos en "Pegar"</li>
               <li>Presionamos en GUARDAR</li>
             </ol>
@@ -114,7 +114,7 @@
               <li lang="en">RIGHT click on the bookmarks bar</li>
               <li lang="en">Click on "Add site"</li>
               <li lang="en">A dialog should appear where you can enter the Name and the URL</li>
-              <li lang="en">Where it says Name, input Paletools v2.0</li>
+              <li lang="en">Where it says Name, input Palesnipe v<span class="version"></span></li>
               <li lang="en">Where it says URL on the input box RIGHT click and then click on "Paste"</li>
               <li lang="en">Click on SAVE</li>
             </ol>
@@ -125,7 +125,7 @@
         <hr />
 
         <h3 name="palesnipe">Palesnipe &copy;</h3>
-        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v2.0.1</h6>
+        <h6>Versi<span lang="es">&oacute;</span><span lang="en">o</span>n: v<span class="version"></span></h6>
         <p class="lead" lang="es">
           Utiliza la siguiente tabla para configurar tus botones o dejarlos por defecto, presiona el mouse sobre el campo de texto y presiona la tecla que quieres usar, el link de instalaci&oacute;n se actualizar&aacute; autom&aacute;ticamente
         </p>
@@ -247,11 +247,19 @@
                     page on listings</span></td>
                 <td><input type="text" data-key="lists.next" class="keys" /></td>
               </tr>
+              <tr>
+                <td><span lang="es">Modo Bot (incrementa puja min)</span><span lang="en">Bot Mode (increment min bid)</span></td>
+                <td><input type="text" data-key="search.botModeMinBid" class="keys" /></td>
+              </tr>
+              <tr>
+                <td><span lang="es">Modo Bot (incrementa compra ya min)</span><span lang="en">Bot Mode (increment min buy now)</span></td>
+                <td><input type="text" data-key="search.botModeMinBuy" class="keys" /></td>
+              </tr>
             </tbody>
           </table>
           <h3 lang="es">Link de instalaci&oacute;n</h3>
           <h3 lang="en">Installation Link</h3>
-          <a href="#" id="palesnipe">Palesnipe v2.0.1</a>
+          <a href="#" id="palesnipe">Palesnipe v<span class="version"></span></a>
           <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
           <h3 lang="en">Donate with MercadoPago or Paypal</h3>
           <a href="https://ceneka.net/mp/d/paletaeaa" target="_blank"><img src="mercadopago.png" style="width:100px;display: inline-block" /></a>
@@ -268,10 +276,14 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    <script src="dist/palesnipe-v2.0.1.js?v2.0.1"></script>
+    <script src="dist/palesnipe-v2.1.0.js?v2.1.0"></script>
   <script src="app.js?3242"></script>
   <script>
-  configureScript('palesnipe-2.0.1', '#palesnipe', '#palesnipe-keys');
+    const VERSION = "2.1.0";
+    for (let elem of document.getElementsByClassName("version")) {
+      elem.textContent = VERSION;
+    }
+    configureScript(`palesnipe-${VERSION}`, '#palesnipe', '#palesnipe-keys');
   </script>
   <input type="text" style="display:none" id="clipboard" />
 </body>
