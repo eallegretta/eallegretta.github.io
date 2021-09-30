@@ -19,7 +19,9 @@ function configureScript(codeId, linkId, keysContainer) {
             incMinBuy: 'PageDown',
             decMaxBuy: 'ArrowDown',
             incMaxBuy: 'ArrowUp',
-            search: 'Digit2'
+            search: 'Digit2',
+            botModeMinBid: 'ControlRight',
+            botModeMinBuy: 'ControlLeft'
         },
         results: {
             bid: 'Digit4',
