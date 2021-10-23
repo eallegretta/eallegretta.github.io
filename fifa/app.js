@@ -21,7 +21,7 @@ function configureScript(codeId, linkId, keysContainer) {
             incMaxBuy: 'ArrowUp',
             search: 'Digit2',
             botModeMinBid: 'BracketRight',
-            botModeMinBuy: 'BrackerLeft',
+            botModeMinBuy: 'BracketLeft',
             enableBotMode: false
         },
         results: {
