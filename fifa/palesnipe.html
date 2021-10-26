@@ -264,7 +264,16 @@
           </table>
           <h3 lang="es">Link de instalaci&oacute;n</h3>
           <h3 lang="en">Installation Link</h3>
-          <a href="#" id="palesnipe">Palesnipe v<span class="version"></span></a>
+          <ul>
+          <li><a href="#" id="palesnipe">Palesnipe v<span class="version"></span></a></li>
+          <li><a href="#" class="palesnipe-260">Palesnipe v<span class="version" data-version="2.6.0"></span></a></li>
+          <li><a href="#" class="palesnipe-250">Palesnipe v<span class="version" data-version="2.5.0"></span></a></li>
+          <li><a href="#" class="palesnipe-220">Palesnipe v<span class="version" data-version="2.2.0"></span></a></li>
+          <li><a href="#" class="palesnipe-210">Palesnipe v<span class="version" data-version="2.1.0"></span></a></li>
+          <li><a href="#" class="palesnipe-201">Palesnipe v<span class="version" data-version="2.0.1"></span></a></li>
+          <li><a href="#" class="palesnipe-200">Palesnipe v<span class="version" data-version="2.0.0"></span></a></li>
+          <li><a href="#" class="palesnipe-192">Palesnipe v<span class="version" data-version="1.9.2"></span></a></li>
+        </ul>
           <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
           <h3 lang="en">Donate with MercadoPago or Paypal</h3>
           <a href="https://ceneka.net/mp/d/paletaeaa" target="_blank"><img src="mercadopago.png" style="width:100px;display: inline-block" /></a>
@@ -282,12 +291,25 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="dist/palesnipe-v3.0.1.js?v3.0.1"></script>
+    <script src="dist/palesnipe-v2.6.0.js"></script>
+    <script src="dist/palesnipe-v2.5.0.js"></script>
+    <script src="dist/palesnipe-v2.2.0.js"></script>
+    <script src="dist/palesnipe-v2.1.0.js"></script>
+    <script src="dist/palesnipe-v2.0.1.js"></script>
+    <script src="dist/palesnipe-v2.0.0.js"></script>
+    <script src="dist/palesnipe-v1.9.2.js"></script>
   <script src="app.js?v3.0.1"></script>
   <script>
     const VERSION = "3.0.1";
     for (let elem of document.getElementsByClassName("version")) {
-      elem.textContent = VERSION;
+      let version = elem.dataset.version || VERSION;
+      elem.textContent = elem.dataset.version || VERSION;
     }
+
+    $("[data-version]").each(function(){
+      configureScript(`palesnipe-${this.dataset.version}`, `.palesnipe-${this.dataset.version.toString().replace(/\./g, "")}`);
+    });
+
     configureScript(`palesnipe-${VERSION}`, '#palesnipe', '#palesnipe-keys');
   </script>
   <input type="text" style="display:none" id="clipboard" />
