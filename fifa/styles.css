@@ -18,9 +18,6 @@ pre {
 .jumbotron {
     background-color: transparent !important;
 }
-    :lang(en) {
-      display: none;
-    }
   
     .tool-logo-left {
       float: left;
