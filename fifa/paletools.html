@@ -71,7 +71,7 @@
         <h3 lang="es">Link de instalaci&oacute;n</h3>
         <h3 lang="en">Installation Link</h3>
         <ul>
-          <li><a href="#" id="palesnipe" data-version="1.0.1">Paletools v1.0.1</a> --> <span lang="es">Arrastrar el link a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span lang="en">Drag the link to the bookmarks bar and press it when the WebApp finished loading</span></li>
+          <li><a href="#" id="palesnipe" data-version="1.0.2">Paletools v1.0.2</a> --> <span lang="es">Arrastrar el link a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span lang="en">Drag the link to the bookmarks bar and press it when the WebApp finished loading</span></li>
         </ul>
         <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
         <h3 lang="en">Donate with MercadoPago or Paypal</h3>
@@ -81,6 +81,15 @@
             style="width:100px;display: inline-block" /></a>
         <hr />
         <h3>Changelog</h3>
+        <h4>v1.0.2</h4>
+        <ul lang="en">
+          <li>Cleaned text with diacritics on player search, please search now works as intended</li>
+            <li>Added duplicated and untradeable icons to player search list</li>
+        </ul>
+        <ul lang="es">
+          <li>Removidos los diacríticos del texto de entrada en la búsqueda de jugadores, la búsqueda ahora funciona como debería</li>
+          <li>Se agregaron los íconos de duplicado e intransferible a la búsqueda de jugadores</li>
+        </ul>
         <h4>v1.0.1</h4>
         <ul lang="es">
           <li>Arreglado bug que evitaba exportar un SBC de FUTBIN</li>
@@ -232,7 +241,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <script src="dist/paletools-v1.0.1.js"></script>
+  <script src="dist/paletools-v1.0.2.js"></script>
   <script>
     $("a[data-version]").each(function () {
       const code = atob(window.paletools[`paletools-${this.dataset.version}`]);
