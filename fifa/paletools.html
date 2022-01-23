@@ -71,7 +71,7 @@
         <h3 lang="es">Link de instalaci&oacute;n</h3>
         <h3 lang="en">Installation Link</h3>
         <ul>
-          <li><a href="#" id="palesnipe" data-version="1.0.7">Paletools v1.0.7</a> --> <span lang="es">Arrastrar el link
+          <li><a href="#" id="palesnipe" data-version="1.0.8">Paletools v1.0.8</a> --> <span lang="es">Arrastrar el link
               a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span lang="en">Drag the link
               to the bookmarks bar and press it when the WebApp finished loading</span></li>
         </ul>
@@ -83,6 +83,17 @@
             style="width:100px;display: inline-block" /></a>
         <hr />
         <h3>Changelog</h3>
+        <h4>v1.0.8</h4>
+        <ul lang="en">
+          <li>Plugin Group My Packs enabled by default</li>
+          <li>Fixed visual bug with numbers in Group My Packs plugin</li>
+          <li>Allow sorting SBCs</li>
+        </ul>
+        <ul lang="es">
+          <li>Plugin Agrupar Mis Packs activado por default</li>
+          <li>Arreglado un bug visual con el plugin Agrupar Mis Packs</li>
+          <li>Permite ordenar los SBCs</li>
+        </ul>
         <h4>v1.0.7</h4>
         <ul lang="en">
           <li>Added Group My Packs plugin</li>
@@ -289,15 +300,15 @@
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
             src="https://www.youtube.com/embed/8iZtsBTVEyk"></iframe>
 
-            <br />
-            <br />
-            <h4 lang="es">Agrupar Mis Packs</h4>
-            <h4 lang="en">Group My Packs</h4>
-            <blockquote lang="es">Permite agrupar tus packs</blockquote>
-            <blockquote lang="en">Allows grouping your packs</blockquote>
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="640" height="360"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-              src="https://www.youtube.com/embed/k3M7uKuUcO8"></iframe>
+          <br />
+          <br />
+          <h4 lang="es">Agrupar Mis Packs</h4>
+          <h4 lang="en">Group My Packs</h4>
+          <blockquote lang="es">Permite agrupar tus packs</blockquote>
+          <blockquote lang="en">Allows grouping your packs</blockquote>
+          <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="640" height="360"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+            src="https://www.youtube.com/embed/k3M7uKuUcO8"></iframe>
         </div>
       </div>
     </div>
@@ -305,7 +316,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <script src="dist/paletools-v1.0.7.js"></script>
+  <script src="dist/paletools-v1.0.8.js"></script>
   <script>
     $("a[data-version]").each(function () {
       const code = window.paletools[`paletools-${this.dataset.version}`];
