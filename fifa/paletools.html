@@ -71,7 +71,8 @@
         <h3 lang="es">Link de instalaci&oacute;n</h3>
         <h3 lang="en">Installation Link</h3>
         <ul>
-          <li><a href="#" id="palesnipe" data-version="1.0.9">Paletools v1.0.9</a> --> <span lang="es">Arrastrar el link
+          <li><a href="#" id="palesnipe" data-version="1.0.10">Paletools v1.0.10</a> --> <span lang="es">Arrastrar el
+              link
               a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span lang="en">Drag the link
               to the bookmarks bar and press it when the WebApp finished loading</span></li>
         </ul>
@@ -83,6 +84,19 @@
             style="width:100px;display: inline-block" /></a>
         <hr />
         <h3>Changelog</h3>
+        <h4>v1.0.10</h4>
+        <ul lang="es">
+          <li>Se agregó el plugin Arreglar Cagadas de EA (arregla los sbcs de ligas)</li>
+          <li>Se agregó el nombre y precio del jugador mas barato en el título</li>
+          <li>Se agregó soporte de integración para el AutoBuyer</li>
+          <li>Se arregló un problema de estilos con los SBC</li>
+        </ul>
+        <ul lang="en">
+          <li>Added Fix EA Mistakes plugin (it fixes the issue with League Upgrades)</li>
+          <li>Added player name and price for cheapest player on the title</li>
+          <li>Added support for AutoBuyer integration</li>
+          <li>Fixed style issue on SBCs</li>
+        </ul>
         <h4>v1.0.9</h4>
         <ul lang="en">
           <li>Added compatibility with FUT Trade Enhacer</li>
@@ -323,7 +337,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <script src="dist/paletools-v1.0.9.js"></script>
+  <script src="dist/paletools-v1.0.10.js"></script>
   <script>
     $("a[data-version]").each(function () {
       const code = window.paletools[`paletools-${this.dataset.version}`];
