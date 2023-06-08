@@ -84,7 +84,6 @@
           </li>
           <li><a href="https://pale.tools/fifa/dist/latest/paletools.user.js">Paletools Tampermonkey</a> --> <span
               lang="es">CLICK PARA INSTALAR</span><span lang="en">CLICK TO INSTALL</span></li>
-           <li><a href="#" id="palesnipe-fx" data-version="fx-latest"></a></li>
         </ul>
         <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
         <h3 lang="en">Donate with MercadoPago or Paypal</h3>
@@ -248,6 +247,7 @@
   <script>
     const versions =
       [
+        '23.9.33',
         '23.9.32',
         '23.9.31',
         '23.9.30',
@@ -306,7 +306,7 @@
     function replaceVersionOnDataTags() {
       $('a[data-version="latest"]').attr("data-version", versions[0]).text(`Paletools v${versions[0]}`);
       $('a[data-version="mobile-latest"]').attr("data-version", `mobile-${versions[0]}`).text(`Paletools Mobile v${versions[0]}`);
-      $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletools Tuki v${versions[0]}`);
+      // $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletools Tuki v${versions[0]}`);
 
       $('[data-links]').each((idx, elem) => {
           var baseVersion = elem.dataset.links;
@@ -349,7 +349,6 @@
 
     init();
   </script>
-  <script src="dist/23.9.32/paletools-fx.prod.js"></script>
 </body>
 
 </html>
