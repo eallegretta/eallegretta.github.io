@@ -71,21 +71,30 @@
                 <h3 lang="es">Link de instalaci&oacute;n</h3>
                 <h3 lang="en">Installation Link</h3>
                 <ul>
-                    <li><a href="#" id="palesnipe" data-version="latest"></a> --> <span lang="es">Arrastrar el
+                    <li><a href="#" id="palesnipe" data-version="latest"></a> --&gt; <span lang="es">Arrastrar el
                             link
                             a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span
                             lang="en">Drag the link
                             to the bookmarks bar and press it when the WebApp finished loading</span></li>
 
-                    <li><a href="#" id="palesnipe-mobile" data-version="mobile-latest"></a> --> <span
+                    <li><a href="#" id="palesnipe-mobile" data-version="mobile-latest"></a> --&gt; <span
                             lang="es">Arrastrar el
                             link
                             a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span
                             lang="en">Drag the link
                             to the bookmarks bar and press it when the WebApp finished loading</span>
                     </li>
-                    <li><a href="https://pale.tools/fifa/dist/latest/paletools.user.js">Paletools Tampermonkey</a> -->
+                    <li><a href="https://pale.tools/fifa/dist/latest/paletools.user.js">Paletools Tampermonkey</a>
+                        --&gt;
                         <span lang="es">CLICK PARA INSTALAR</span><span lang="en">CLICK TO INSTALL</span>
+                    </li>
+                    <li><a href="#" data-version="fx-latest">Paletools <span lang="es">Modo
+                                Tuki</span><span lang="en">Tuki Mode</span></a> --&gt;
+                        <span lang="es">Arrastrar el
+                            link
+                            a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span>
+                        <span lang="en">Drag the link
+                            to the bookmarks bar and press it when the WebApp finished loading</span>
                     </li>
                 </ul>
                 <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
@@ -105,13 +114,7 @@
     <script>
         const versions =
             [
-                '24.0.8',
-                '24.0.7',
-                '24.0.6',
-                '24.0.5',
-                '24.0.2',
-                '24.0.1',
-                '24.0.0'
+                '24.0.9'
             ];
 
         function loadScript(url) {
@@ -132,7 +135,7 @@
         function replaceVersionOnDataTags() {
             $('a[data-version="latest"]').attr("data-version", versions[0]).text(`Paletools v${versions[0]}`);
             $('a[data-version="mobile-latest"]').attr("data-version", `mobile-${versions[0]}`).text(`Paletools Mobile v${versions[0]}`);
-            // $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletools Tuki v${versions[0]}`);
+            $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletools Tuki v${versions[0]}`);
 
             $('[data-links]').each((idx, elem) => {
                 var baseVersion = elem.dataset.links;
@@ -164,6 +167,7 @@
         function init() {
             const scripts = [].concat(...versions.map(x => [
                 `dist/${x}/paletools.prod.js`,
+                `dist/${x}/paletools-fx.prod.js`,
                 `dist/${x}/mobile/paletools-mobile.prod.js`
             ]));
 
