@@ -1,6 +1,14 @@
 <html>
 
 <head>
+    <link rel="preload" as="image" href="/ads/300x300.jpg" />
+    <link rel="preload" as="image" href="/ads/300x600.jpg" />
+    <link rel="preload" as="image" href="/ads/728x90.jpg" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGM0BYY6W0"></script>
     <script>
@@ -36,66 +44,68 @@
     </script>
 </head>
 
-<body>
+<body class="paletools">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSKH8N" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
-        <nav class="navbar navbar-expand-lg">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#es">Español</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#en">English</a>
-                    </li>
-                </ul>
-                <a href="https://github.com/eallegretta/paletools">Github</a>
-            </div>
+        <nav style="position: fixed; bottom: 0; right: 0; background-color: #111111; padding: 4px">
+            <a lang="en" href="#es" style="display: block;">Español</a>
+            <a lang="es" href="#en" style="display: block;">English</a>
         </nav>
 
         <div class="row">
             <div class="col">
-                <h1 lang="es">Bienvenido a Paletools &copy;</h1>
-                <h1 lang="en">Welcome to Paletools &copy;</h1>
-                <p class="lead" lang="es">
-                    Paletools &copy; es una herramienta para realizar de todo en la WebApp.
+                <h2 lang="es">Bienvenido a Paletools
+                    <sup>&copy;</sup>
+                </h2>
+                <h2 lang="en">Welcome to Paletools <sup>&copy;</sup></h2>
+                <!-- <p class="lead" lang="es">
+                    Paletools <sup>&copy;</sup> es una herramienta para realizar de todo en la WebApp.
                 </p>
                 <p class="lead" lang="en">
-                    Paletools &copy; is a tool for doing pretty much anything on the WebApp.
-                </p>
+                    Paletools <sup>&copy;</sup> is a tool for doing pretty much anything on the WebApp.
+                </p> -->
 
-                <hr />
                 <h3 lang="es">Link de instalaci&oacute;n</h3>
                 <h3 lang="en">Installation Link</h3>
                 <ul>
-                    <li><a href="#" id="palesnipe" data-version="latest"></a> --&gt; <span lang="es">Arrastrar el
+                    <li><a href="#" id="palesnipe" data-version="latest">
+                            <span lang="es">Cargando...</span>
+                            <span lang="en">Loading...</span>
+                        </a> <span class="instructions">--&gt;</span> <span lang="es" class="instructions">Arrastrar el
                             link
-                            a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span
-                            lang="en">Drag the link
+                            a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span lang="en"
+                            class="instructions">Drag the link
                             to the bookmarks bar and press it when the WebApp finished loading</span></li>
 
-                    <li><a href="#" id="palesnipe-mobile" data-version="mobile-latest"></a> --&gt; <span
-                            lang="es">Arrastrar el
+                    <li><a href="#" id="palesnipe-mobile" data-version="mobile-latest">Cargando...</a><span
+                            class="instructions">--&gt;</span> <span lang="es" class="instructions">Arrastrar el
                             link
-                            a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span
-                            lang="en">Drag the link
+                            a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span><span lang="en"
+                            class="instructions">Drag the link
                             to the bookmarks bar and press it when the WebApp finished loading</span>
                     </li>
                     <li><a href="https://pale.tools/fifa/dist/latest/paletools.user.js">Paletools Tampermonkey</a>
-                        --&gt;
-                        <span lang="es">CLICK PARA INSTALAR</span><span lang="en">CLICK TO INSTALL</span>
+                        <span class="instructions">--&gt;</span>
+                        <span lang="es" class="instructions">CLICK PARA INSTALAR</span><span lang="en"
+                            class="instructions">CLICK TO INSTALL</span>
                     </li>
-                    <li><a href="#" data-version="fx-latest">Paletuki</a> --&gt;
-                        <span lang="es">Arrastrar el
+                    <li><a href="#" data-version="fx-latest">Cargando...</a> <span class="instructions">--&gt;</span>
+                        <span lang="es" class="instructions">Arrastrar el
                             link
                             a la barra de marcadores y presionarlo cuando la WebApp haya cargado</span>
-                        <span lang="en">Drag the link
+                        <span lang="en" class="instructions">Drag the link
                             to the bookmarks bar and press it when the WebApp finished loading</span>
                     </li>
                 </ul>
+
+                <div class="ad-container">
+                    <h3>Sponsor</h3>
+                    <div class="ad" onclick="window.open('https://www.mmoexp.com/Fc-24/Coins.html', '_blank')"></div>
+                </div>
+
                 <h3 lang="es">Donaciones con MercadoPago o Paypal</h3>
                 <h3 lang="en">Donate with MercadoPago or Paypal</h3>
                 <a href="https://ceneka.net/mp/d/paletaeaa" target="_blank"><img src="mercadopago.png"
@@ -185,6 +195,8 @@
         window.onhashchange = displayLang;
 
         function init() {
+            displayLang();
+
             const scripts = [].concat(...versions.map(x => [
                 `dist/${x}/paletools.prod.js`,
                 `dist/${x}/paletools-fx.prod.js`,

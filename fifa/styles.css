@@ -18,23 +18,90 @@ pre {
 .jumbotron {
     background-color: transparent !important;
 }
-  
-    .tool-logo-left {
-      float: left;
-      margin-right: 10px;
-      width: 300px;
+
+.tool-logo-left {
+    float: left;
+    margin-right: 10px;
+    width: 300px;
+}
+
+tr th:after {
+    content: ':';
+    margin-right: 4px;
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.ver {
+    display: inline;
+}
+
+.ad-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.paletools .ad-container {
+    align-items: flex-start;
+}
+
+.home .ad,
+.paledroid .ad {
+    background-image: url(ads/300x600.jpg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 600px;
+    cursor: pointer;
+}
+
+.paletools .ad {
+    background-image: url(ads/728x90.jpg);
+    background-repeat: no-repeat;
+    width: 728px;
+    height: 90px;
+    cursor: pointer;
+}
+
+@media (max-height: 900px) {
+
+    .home .ad,
+    .paledroid .ad {
+        background-image: url(ads/300x300.jpg);
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
     }
-  
-    tr th:after {
-      content: ':';
-      margin-right: 4px;
+}
+
+
+@media(max-width: 800px) {
+    .paletools .ad {
+        background-image: url(ads/300x300.jpg);
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
     }
-  
-    hr {
-      margin-top: 40px;
-      margin-bottom: 40px;
+
+    .paletools .instructions {
+        display: none;
     }
-    
-    .ver {
-      display: inline;
+}
+
+@media (max-width: 800px) and (min-height:900px) {
+    .paletools .ad {
+        background-image: url(ads/300x600.jpg);
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 600px;
+        margin: auto;
     }
+
+    .paletools .instructions {
+        display: none;
+    }
+}

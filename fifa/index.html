@@ -1,6 +1,14 @@
 <html>
 
 <head>
+    <link rel="preload" as="image" href="/ads/300x300.jpg" />
+    <link rel="preload" as="image" href="/ads/300x600.jpg" />
+    <link rel="preload" as="image" href="/ads/728x90.jpg" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGM0BYY6W0"></script>
     <script>
@@ -22,8 +30,8 @@
     <!-- End Google Tag Manager -->
     <title>Home of Paletools</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-200440638-1">
     </script>
@@ -36,7 +44,7 @@
     </script>
 </head>
 
-<body>
+<body class="home">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSKH8N" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -50,14 +58,21 @@
                 <a class="btn btn-primary btn-lg" href="paletools.html">Paletools v24</a>
                 <a class="btn btn-primary btn-lg" href="paledroid.html">Paledroid v24</a>
             </p>
-            <div class="text-center">
-                <h3>Donaciones / Donate</h3>
+
+            <div class="ad-container">
+                <h3>Sponsor</h3>
+                <div class="ad" onclick="window.open('https://www.mmoexp.com/Fc-24/Coins.html', '_blank')"></div>
+            </div>
+
+            <div class="text-center mt-4">
+                <h3><span lang="es">Donaciones</span><span lang="en">Donate</span></h3>
                 <a href="https://ceneka.net/mp/d/paletaeaa" target="_blank"><img src="mercadopago.png"
                         style="width:100px;display: inline-block" /></a>
                 <a href="https://streamlabs.com/paleta_ar/tip" target="_blank"><img src="paypal.png"
                         style="width:100px;display: inline-block" /></a>
             </div>
         </div>
+
     </div>
 
 </body>
