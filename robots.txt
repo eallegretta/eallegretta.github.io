@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /fifa/legacy/
+Disallow: /fifa/dist-legacy/
+Disallow: /fifa/dist/
