@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Paletools
 // @namespace http://pale.tools/fifa/
-// @version 26.0.21
+// @version 26.0.20
 // @description Paletools
 // @author Paleta
 // @match https://www.ea.com/*/ea-sports-fc/ultimate-team/web-app/
