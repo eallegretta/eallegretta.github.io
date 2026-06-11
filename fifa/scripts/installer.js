@@ -1,5 +1,0 @@
-function setupInstallScript(path){
-    fetch
-
-
-}
