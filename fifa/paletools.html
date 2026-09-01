@@ -87,7 +87,8 @@
                             to the bookmarks bar and press it when the WebApp finished loading</span></li>
                     <li><a href="https://pale.tools/fifa/companion.html">Paletools Companion</a><span
                             class="instructions">--&gt;</span>
-                        <span class="instructions">Use this companion if you are not using Tampermonkey, this allows Paletools to fetch prices</span>
+                        <span class="instructions">Use this companion if you are not using Tampermonkey, this allows
+                            Paletools to fetch prices</span>
                     </li>
                     <li><a href="#" id="palesnipe-mobile" data-version="mobile-latest">Loading...</a><span
                             class="instructions">--&gt;</span>
@@ -108,10 +109,6 @@
                         <span class="instructions">--&gt;</span>
                         <span class="instructions">CLICK
                             TO INSTALL</span>
-                    </li>
-                    <li><a href="#" data-version="fx-latest">Loading...</a> <span class="instructions">--&gt;</span>
-                        <span class="instructions">Drag the link
-                            to the bookmarks bar and press it when the WebApp finished loading</span>
                     </li>
                 </ul>
 
@@ -136,20 +133,19 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script>
-        const versions =
-            [
-                '26.0.37',
-                '26.0.35',
-                '26.0.32',
-                '26.0.30',
-                '26.0.28',
-                '26.0.24',
-                '26.0.23',
-                '26.0.22',
-                '26.0.21',
-                '26.0.20'
-            ];
- 
+        function loadVersions() {
+            return new Promise(resolve => {
+                const versions = [];
+                fetch("versions.txt").then(async response => {
+                    for (let version of (await response.text()).split('\n')) {
+                        versions.push(version);
+                    }
+
+                    resolve(versions);
+                });
+            });
+        }
+
         function loadScript(url) {
             return new Promise(function (resolve, reject) {
                 var element = document.createElement('script');
@@ -165,7 +161,7 @@
             return Promise.all(promises);
         }
 
-        function replaceVersionOnDataTags() {
+        function replaceVersionOnDataTags(versions) {
             $('a[data-version="latest"]').attr("data-version", versions[0]).text(`Paletools v${versions[0]}`);
             $('a[data-version="mobile-latest"]').attr("data-version", `mobile-${versions[0]}`).text(`Paletools Mobile v${versions[0]}`);
             $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletuki v${versions[0]}`);
@@ -184,20 +180,25 @@
             });
         }
 
-        function init() {
+        function init(versions) {
+            let scripts = [];
 
-            const scripts = [].concat(...versions.map(x => [
-                `dist/${x}/paletools.prod.js`,
-                `dist/${x}/paletools-fx.prod.js`,
-                `dist/${x}/mobile/paletools-mobile.prod.js`
-            ]));
+            for (let version of versions) {
+                scripts = scripts.concat([
+                    `dist/${version}/paletools.prod.js`,
+                    `dist/${version}/mobile/paletools-mobile.prod.js`
+                ]);
+            }
 
             loadScripts(scripts).then(() => {
-                replaceVersionOnDataTags();
+                replaceVersionOnDataTags(versions);
             });
         }
 
-        init();
+        loadVersions().then(versions => {
+            init(versions);
+        });
+
     </script>
 </body>
 
