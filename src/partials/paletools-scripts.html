@@ -32,8 +32,7 @@
         function replaceVersionOnDataTags(versions) {
             $('a[data-version="latest"]').attr("data-version", versions[0]).text(`Paletools v${versions[0]}`);
             $('a[data-version="mobile-latest"]').attr("data-version", `mobile-${versions[0]}`).text(`Paletools Mobile v${versions[0]}`);
-            $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletuki v${versions[0]}`);
-
+          
             $('[data-links]').each((idx, elem) => {
                 var baseVersion = elem.dataset.links;
                 var validVersions = versions.filter(x => x.indexOf(baseVersion) === 0);

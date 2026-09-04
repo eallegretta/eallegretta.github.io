@@ -8,12 +8,12 @@
     <meta name="title" content="Paletools - The only EA FC Ultimate Team Helper you will ever need">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Paletools is a tool to help you with your everyday tasks in EA FC Ultimate Team. It consists of a set of plugins that will assist you in sniping, completing SBCs, opening multiple packs with a single click and keyboard shortcuts for differents tasks among other things.">
+        content="Paletools is a tool to help you with your everyday tasks in EA FC Ultimate Team. It consists of a set of plugins that will assist you in sniping, completing SBCs, opening multiple packs with a single click and keyboard shortcuts for different tasks among other things.">
 
     <!-- Facebook Open Graph -->
     <meta property="og:title" content="Paletools - The only EA FC Ultimate Team Helper you will ever need">
     <meta property="og:description"
-        content="Paletools is a tool to help you with your everyday tasks in EA FC Ultimate Team. It consists of a set of plugins that will assist you in sniping, completing SBCs, opening multiple packs with a single click and keyboard shortcuts for differents tasks among other things.">
+        content="Paletools is a tool to help you with your everyday tasks in EA FC Ultimate Team. It consists of a set of plugins that will assist you in sniping, completing SBCs, opening multiple packs with a single click and keyboard shortcuts for different tasks among other things.">
     <meta property="og:image" content="https://pale.tools/logo.png?v26">
     <meta property="og:url" content="https://pale.tools">
     <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Paletools - The only EA FC Ultimate Team Helper you will ever need">
     <meta name="twitter:description"
-        content="Paletools is a tool to help you with your everyday tasks in EA FC Ultimate Team. It consists of a set of plugins that will assist you in sniping, completing SBCs, opening multiple packs with a single click and keyboard shortcuts for differents tasks among other things.">
+        content="Paletools is a tool to help you with your everyday tasks in EA FC Ultimate Team. It consists of a set of plugins that will assist you in sniping, completing SBCs, opening multiple packs with a single click and keyboard shortcuts for different tasks among other things.">
     <meta name="twitter:image" content="https://pale.tools/logo.png?v26">
     <meta name="twitter:site" content="@paleta">
     <meta name="twitter:creator" content="@paleta">
@@ -120,7 +120,7 @@
                 <div class="ad-container">
                     <h3>Sponsor</h3>
                     <div class="ad"
-                        onclick="window.open('https://www.mmoexp.com/Fc-26/Coins.html', '_blank');gtag('ad');"></div>
+                        onclick="window.open('https://www.mmoexp.com/Fc-26/Coins.html', '_blank');gtag('event','ad');"></div>
                 </div>
 
 
@@ -171,8 +171,7 @@
         function replaceVersionOnDataTags(versions) {
             $('a[data-version="latest"]').attr("data-version", versions[0]).text(`Paletools v${versions[0]}`);
             $('a[data-version="mobile-latest"]').attr("data-version", `mobile-${versions[0]}`).text(`Paletools Mobile v${versions[0]}`);
-            $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletuki v${versions[0]}`);
-
+          
             $('[data-links]').each((idx, elem) => {
                 var baseVersion = elem.dataset.links;
                 var validVersions = versions.filter(x => x.indexOf(baseVersion) === 0);
