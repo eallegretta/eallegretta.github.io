@@ -1,0 +1,70 @@
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script>
+        function loadVersions() {
+            return new Promise(resolve => {
+                const versions = [];
+                fetch("versions.txt").then(async response => {
+                    for (let version of (await response.text()).split('\n')) {
+                        versions.push(version);
+                    }
+
+                    resolve(versions);
+                });
+            });
+        }
+
+        function loadScript(url) {
+            return new Promise(function (resolve, reject) {
+                var element = document.createElement('script');
+                element.src = url;
+                element.onload = resolve;
+                element.onerror = reject;
+                document.body.appendChild(element);
+            });
+        }
+
+        function loadScripts(scripts) {
+            var promises = scripts.map(loadScript);
+            return Promise.all(promises);
+        }
+
+        function replaceVersionOnDataTags(versions) {
+            $('a[data-version="latest"]').attr("data-version", versions[0]).text(`Paletools v${versions[0]}`);
+            $('a[data-version="mobile-latest"]').attr("data-version", `mobile-${versions[0]}`).text(`Paletools Mobile v${versions[0]}`);
+            $('a[data-version="fx-latest"]').attr("data-version", `fx-${versions[0]}`).text(`Paletuki v${versions[0]}`);
+
+            $('[data-links]').each((idx, elem) => {
+                var baseVersion = elem.dataset.links;
+                var validVersions = versions.filter(x => x.indexOf(baseVersion) === 0);
+
+                $(elem).append(validVersions.map(x => $(`<h6><a href="#" data-version="${x}">Paletools v${x}</a></h6><h6><a href="#" data-version="mobile-${x}">Paletools Mobile v${x}</a></h6>`)));
+            });
+
+
+            $("a[data-version]").each(function () {
+                const code = window.paletools[`paletools-${this.dataset.version}`];
+                $(this).attr("href", `javascript:${code}`);
+            });
+        }
+
+        function init(versions) {
+            let scripts = [];
+
+            for (let version of versions) {
+                scripts = scripts.concat([
+                    `dist/${version}/paletools.prod.js`,
+                    `dist/${version}/mobile/paletools-mobile.prod.js`
+                ]);
+            }
+
+            loadScripts(scripts).then(() => {
+                replaceVersionOnDataTags(versions);
+            });
+        }
+
+        loadVersions().then(versions => {
+            init(versions);
+        });
+
+    </script>
