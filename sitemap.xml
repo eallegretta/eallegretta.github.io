@@ -24,4 +24,14 @@
   <lastmod>2024-06-23T04:09:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://pale.tools/terms.html</loc>
+  <lastmod>2026-09-05T00:00:00+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
+<url>
+  <loc>https://pale.tools/privacy.html</loc>
+  <lastmod>2026-09-05T00:00:00+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
 </urlset>

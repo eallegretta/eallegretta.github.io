@@ -57,6 +57,22 @@ const pages = [
     assetPrefix: "../",
     page: "inyected.html",
   },
+  {
+    output: "terms.html",
+    title: "Terms of Service - Paletools",
+    bodyClass: "paletools",
+    containerClass: "container mt-5",
+    assetPrefix: "",
+    page: "terms.html",
+  },
+  {
+    output: "privacy.html",
+    title: "Privacy Policy - Paletools",
+    bodyClass: "paletools",
+    containerClass: "container mt-5",
+    assetPrefix: "",
+    page: "privacy.html",
+  },
 ];
 
 function readTemplate(relativePath) {
