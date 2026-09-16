@@ -43,7 +43,7 @@ hr {
 
 .home .ad,
 .paledroid .ad {
-    background-image: url(ads/300x600.jpg);
+    background-image: url(ads/300x600.webp);
     background-repeat: no-repeat;
     width: 300px;
     height: 600px;
@@ -51,7 +51,7 @@ hr {
 }
 
 .paletools .ad {
-    background-image: url(ads/728x90.jpg);
+    background-image: url(ads/728x90.webp);
     background-repeat: no-repeat;
     width: 728px;
     height: 90px;
@@ -62,7 +62,7 @@ hr {
 
     .home .ad,
     .paledroid .ad {
-        background-image: url(ads/300x300.jpg);
+        background-image: url(ads/300x300.webp);
         background-repeat: no-repeat;
         width: 300px;
         height: 300px;
@@ -72,7 +72,7 @@ hr {
 
 @media(max-width: 800px) {
     .paletools .ad {
-        background-image: url(ads/300x300.jpg);
+        background-image: url(ads/300x300.webp);
         background-repeat: no-repeat;
         width: 300px;
         height: 300px;
@@ -85,7 +85,7 @@ hr {
 
 @media (max-width: 800px) and (min-height:900px) {
     .paletools .ad {
-        background-image: url(ads/300x600.jpg);
+        background-image: url(ads/300x600.webp);
         background-repeat: no-repeat;
         width: 300px;
         height: 600px;
