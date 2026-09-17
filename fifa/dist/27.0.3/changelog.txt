@@ -1,0 +1,2 @@
+Fixed unnasigned items limit
+Added changelog to check for updates screen
