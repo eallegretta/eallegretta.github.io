@@ -1,0 +1,16 @@
+The following plugins are back
+- Duplicated to SBC
+- Transfer List to SBC
+- Unassigned to SBC
+- Transfer List send all to club
+- Whats new
+- Repeat SBC
+- Import SBC
+- Improved Player Search
+- Keep players sell value
+- Important Leagues and Nations
+- Refresh coins
+- Display Token limits
+- Pale Picks
+- Improved Search Filters
+- Hide SBCs
