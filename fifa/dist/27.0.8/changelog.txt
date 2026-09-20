@@ -1,0 +1,3 @@
+Improved UI for pack store on grid mode
+Removed pack counter when there is only 1 pack
+Put back babysitter plugin
