@@ -1,0 +1,5 @@
+- Added Album
+- Added FUT Gallery
+- Added grouping of items in add multiple players view
+- Added grid mode and wide mode for objectives
+- Added holographic icon for cards
