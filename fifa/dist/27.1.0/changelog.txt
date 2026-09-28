@@ -1,0 +1,2 @@
+- Auto Solving of One Click SBCs
+- Price Tracker initial version
