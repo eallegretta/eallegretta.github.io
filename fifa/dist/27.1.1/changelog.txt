@@ -1,0 +1,2 @@
+Price Tracker now uses external market prices instead of find lowest price (it was causing soft bans)
+Styles fixes for grid mode in desktop and mobile
