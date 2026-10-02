@@ -1,0 +1,3 @@
+- Hidden injuries are back
+- Fixed an issue when grouping players in add multiple players to SBC
+- Color was missing on transfer list profit
