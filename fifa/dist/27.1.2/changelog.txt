@@ -1,0 +1,2 @@
+- Album and Gallery now display tracked players information from EA's servers
+- Fixed issue in transfer market not displaying market information on mobile
