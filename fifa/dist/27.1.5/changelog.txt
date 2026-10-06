@@ -1,0 +1,1 @@
+Display the first owner button only if the card is collected in the gallery and album
