@@ -1,0 +1,4 @@
+Added album and gallery first owner detection and tracking button
+Removed locked items from OneClick SBCs player list
+Added holographic filter on transfer market search (filters search results only)
+Fixed transfer profit missing colors
