@@ -1,0 +1,4 @@
+- Auto Snipe plugin
+- Allow auto buy cards in gallery and album
+- Updated gallery with new sets
+- Player revisions plugin
