@@ -1,0 +1,4 @@
+- Added back the Market button in the Album / Gallery
+- Fixed compare prices bugs
+- Fixed visual issues in new SBCs
+- Removed holograpic filter from auto snipe
